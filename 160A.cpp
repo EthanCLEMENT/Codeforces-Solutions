@@ -25,10 +25,6 @@ int main(){
         }
         else{
             ans+=v[j];
-            // cout << ans << endl;
         }
     }
-
-
-
 }
