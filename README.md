@@ -1,3 +1,3 @@
 # Codeforce-problems
 
-In this repository I put all my scripts that are related to competitive programming.
+In this repository I put all my codeforce scripts.
