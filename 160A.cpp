@@ -1,30 +1,37 @@
 #include <iostream>
+#include <algorithm>
+#include <set>
 #include <string>
-#include <numeric>
+#include <cctype>
+#include <cstring>
+#include <cmath>
 #include <vector>
-#include <bits/stdc++.h>
+#include <numeric>
+
+#define ll long long
 
 using namespace std;
 
-int main(){
-
+int main() {
     int n, ans = 0;
     cin >> n;
-    vector<int> v;
+    vector<int>v;
     for(int i = 0; i < n; i++){
         int a;
         cin >> a;
         v.push_back(a);
     }
-    sort(v.begin(), v.end(), greater<int>());
+    sort(v.begin(), v.end(),greater<int>());
     int sum = accumulate(v.begin(), v.end(),0);
-    for(int j = 0; j < v.size() + 1; j++){
-        if(ans > sum/2){
-            cout << j << endl;
+    int curr = 0;
+    for(int i = 0; i < v.size(); i++){
+        if(sum >= curr){
+            ans++;
+            sum -= v[i];
+            curr += v[i];
+        }else{
             break;
         }
-        else{
-            ans+=v[j];
-        }
     }
+    cout << ans << endl;
 }
